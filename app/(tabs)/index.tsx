@@ -1,31 +1,35 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
+import EditScreenInfo from "@/components/EditScreenInfo";
+import { Button, Input, Text, View, XStack, YStack } from "tamagui";
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+    <View f={1} jc="center" ai="center" bg="$gray5">
+      <Text fow="bold" fos="$6">
+        Tab One
+      </Text>
+      <YStack m="$4" gap="$8">
+      <YStack
+        p="$4"
+        br="$4"
+        bg="$red10"
+        $theme-dark={{ bg: "$gray10" }}
+      >
+        <Text>bg: should be red in light mode, gray in dark mode</Text>
+      </YStack>
+
+      <YStack jc="center" ai="center">
+        <Text>
+          Red Theme Button: should be light red in light mode, dark red in dark mode
+        </Text>
+        <Button theme="red" onPress={() => {}}>Test</Button>
+      </YStack>
+
+      <YStack jc="center" ai="center">
+        <Text>
+          Input: background should be white in light mode, black in dark mode
+        </Text>
+        <Input placeholder="Input" w="$10" />
+      </YStack>
+      </YStack>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

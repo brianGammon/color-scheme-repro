@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo51",
-    "slug": "expo51",
+    "name": "color-scheme-repro",
+    "slug": "color-scheme-repro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.colorschemerepro"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.example.colorschemerepro"
     },
     "web": {
       "bundler": "metro",
